@@ -3,6 +3,7 @@
 namespace App;
 
 use Alaouy\Youtube\Facades\Youtube;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
@@ -68,12 +69,12 @@ class Video extends Model
     }
 
     /**
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string                                $q
+     * @param Builder $query
+     * @param string  $q
      */
-    public function scopeSearch($query, $q)
+    public function scopeSearch(Builder $query, $q)
     {
-        return $query->where(function ($query) use ($q) {
+        return $query->where(function (Builder $query) use ($q) {
             return $query
                 ->where('title', 'like', "%{$q}%")
                 ->where('description', 'like', "%{$q}%");
