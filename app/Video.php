@@ -24,7 +24,8 @@ class Video extends Model
     /**
      * Create a video from youtube video info.
      *
-     * @param  stdClass $info
+     * @param stdClass $info
+     *
      * @return Video
      */
     public static function fromYoutubeInfo($info)
@@ -41,7 +42,8 @@ class Video extends Model
     /**
      * Create a video from youtube id.
      *
-     * @param  string $id
+     * @param string $id
+     *
      * @return Video
      */
     public static function fromYoutubeId($id)
@@ -54,7 +56,8 @@ class Video extends Model
     /**
      * Create a video from youtube url.
      *
-     * @param  string $id
+     * @param string $id
+     *
      * @return Video
      */
     public static function fromYoutubeUrl($url)
@@ -65,8 +68,8 @@ class Video extends Model
     }
 
     /**
-     * @param  \Illuminate\Database\Eloquent\Builder $query
-     * @param  string $q
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string                                $q
      */
     public function scopeSearch($query, $q)
     {
